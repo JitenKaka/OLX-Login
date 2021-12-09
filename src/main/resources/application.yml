@@ -1,0 +1,30 @@
+server:
+  port: 9002
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /olx-login-monitor  
+  endpoint:
+    shutdown:
+      enabled: true
+
+spring:
+   application:
+     name: login-service
+   datasource:
+      url: jdbc:mysql://localhost:3306/olx_logindb
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: Ganeshbalaji@92
+   jpa:
+     hibernate.ddl-auto: update
+     properties:
+        hibernate:
+           dialect: org.hibernate.dialect.MySQL8Dialect      
+  
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
